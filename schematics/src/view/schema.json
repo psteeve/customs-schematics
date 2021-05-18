@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchemanticsForView",
+  "title": "View Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the view.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "export": {
+      "type": "boolean",
+      "default": false,
+      "description": "Export component from module?"
+    },
+    "module": {
+      "description": "The module where the view takes place.",
+      "type": "string",
+      "default": "global",
+      "enum": [
+        "global",
+        "emprunteur",
+        "lpp",
+        "retraite",
+        "recherche",
+        "welcome"
+      ],
+      "x-prompt": "In which module the view takes place?"
+    },
+    "kind": {
+      "description": "The kind of view is.",
+      "type": "string",
+      "default": "presenter",
+      "enum": [
+        "presenter",
+        "editor"
+      ],
+      "x-prompt": "What kind of view is it?"
+    }
+  }
+}

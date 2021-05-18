@@ -1,0 +1,41 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "feature": {
+      "aliases": ["fea"],
+      "factory": "./feature/index#feature",
+      "description": "Generates a feature",
+      "schema": "./feature/schema.json"
+    },
+    "business": {
+      "aliases": ["bus"],
+      "factory": "./business/index#business",
+      "description": "Generates a business",
+      "schema": "./business/schema.json"
+    },
+    "view": {
+      "aliases": ["vie"],
+      "factory": "./view/index#view",
+      "description": "Generates a view",
+      "schema": "./view/schema.json"
+    },
+    "function": {
+      "aliases": ["fun"],
+      "factory": "./function/index#fun",
+      "description": "Generates a shared function",
+      "schema": "./function/schema.json"
+    },
+    "component": {
+      "aliases": ["cmp"],
+      "factory": "./component/index#component",
+      "description": "Generates a component",
+      "schema": "./component/schema.json"
+    },
+    "accessor": {
+      "aliases": ["acc"],
+      "factory": "./accessor/index#accessor",
+      "description": "Generates an accessor component",
+      "schema": "./accessor/schema.json"
+    }
+  }
+}
