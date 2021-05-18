@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchemanticsForComponent",
+  "title": "Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the component.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "module": {
+      "description": "The module where the component takes place.",
+      "type": "string",
+      "default": "global",
+      "enum": [
+        "global",
+        "emprunteur",
+        "lpp",
+        "retraite",
+        "recherche",
+        "welcome"
+      ],
+      "x-prompt": "In which module the component takes place?"
+    }
+  }
+}

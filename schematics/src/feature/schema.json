@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchemanticsForFeature",
+  "title": "Feature Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the feature.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "module": {
+      "description": "The module where the feature takes place.",
+      "type": "string",
+      "default": "global",
+      "enum": [
+        "global",
+        "emprunteur",
+        "lpp",
+        "retraite",
+        "recherche",
+        "welcome"
+      ],
+      "x-prompt": "In which module the feature takes place?"
+    },
+    "kind": {
+      "description": "default kind is feature and there is no prompt",
+      "type": "string",
+      "default": "global"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<h1 translate><%='global' === module ? '' : 'module.' + module + '.' %>features.<%=underscore(name)%>.title</h1>
+<div class="side-card-layout">
+  <div class="side-card-layout-cards">
+  </div>
+  <div class="side-card-layout-main-content form-main-content">
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit.emit()"
+    >
+      <mat-card>
+        Development in progress
+      </mat-card>
+      <div class="form-actions">
+        <button
+          type="button"
+          role="back"
+          mat-raised-button
+          color="primary"
+          (click)="back.emit()"
+        >
+          <span translate>form.button.back</span>
+        </button>
+        <button
+          type="submit"
+          mat-raised-button
+          color="accent"
+          [disabled]="!canSubmit"
+          #loadingButton="loadingButton"
+          (clickAndLoad)="submit.emit()"
+        >
+          <span translate>form.button.next</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
